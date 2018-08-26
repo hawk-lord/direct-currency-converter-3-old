@@ -1,0 +1,714 @@
+[
+  {
+    "name": "AED",
+    "regex": "(AED|Dhs?)"
+  },
+  {
+    "name": "AFN",
+    "regex": "(AFN|؋|افغانۍ|[aA]fs?)"
+  },
+  {
+    "name": "ALL",
+    "regex": "(ALL|Lekë?)"
+  },
+  {
+    "name": "AMD",
+    "regex": "(AMD|\\u058F|Դրամ|drams?|драм)"
+  },
+  {
+    "name": "ANG",
+    "regex": "(ANG|NAƒ|ƒ|NAf\\.?)"
+  },
+  {
+    "name": "AOA",
+    "regex": "(AOA|[kK]z)"
+  },
+  {
+    "name": "ARS",
+    "regex": "(ARS|AR\\$|\\$)"
+  },
+  {
+    "name": "AUD",
+    "regex": "(AUD|AUD\\s?\\$|AU?\\$|\\$)"
+  },
+  {
+    "name": "AWG",
+    "regex": "(AWG|AWG\\.?Afl\\.?)"
+  },
+  {
+    "name": "AZN",
+    "regex": "(AZN|₼)"
+  },
+  {
+    "name": "BAM",
+    "regex": "(BAM|KM)"
+  },
+  {
+    "name": "BBD",
+    "regex": "(BBD|Bds\\$?|\\$)"
+  },
+  {
+    "name": "BDT",
+    "regex": "(BDT|৳|Tk\\.?|Taka)"
+  },
+  {
+    "name": "BGN",
+    "regex": "(BGN)"
+  },
+  {
+    "name": "BHD",
+    "regex": "(BHD|دينار|BD\\.?|\\.د\\.ب)"
+  },
+  {
+    "name": "BIF",
+    "regex": "(BIF)"
+  },
+  {
+    "name": "BMD",
+    "regex": "(BMD\\$|BMD|BD\\$?|Bd\\$?|\\$)"
+  },
+  {
+    "name": "BND",
+    "regex": "(BND\\$|BND|B\\$|\\$)"
+  },
+  {
+    "name": "BOB",
+    "regex": "(BOB|Bs\\.?)"
+  },
+  {
+    "name": "BOV",
+    "regex": "(BOV)"
+  },
+  {
+    "name": "BRL",
+    "regex": "(BRL|R\\$)"
+  },
+  {
+    "name": "BSD",
+    "regex": "(BSD|BSD\\$|B\\$|\\$)"
+  },
+  {
+    "name": "BTN",
+    "regex": "(BTN|Nu\\.?)"
+  },
+  {
+    "name": "BWP",
+    "regex": "(BWP|\\sP)"
+  },
+  {
+    "name": "BYN",
+    "regex": "(BYN|Br\\.?|бр\\.?)"
+  },
+  {
+    "name": "BZD",
+    "regex": "(BZD|BZ\\s?\\$|\\$)"
+  },
+  {
+    "name": "CAD",
+    "regex": "(CAD|CAD\\$|C\\$|\\$)"
+  },
+  {
+    "name": "CDF",
+    "regex": "(CDF|F[Cc])"
+  },
+  {
+    "name": "CHE",
+    "regex": "(CHE)"
+  },
+  {
+    "name": "CHF",
+    "regex": "(CHF|Fr\\.)"
+  },
+  {
+    "name": "CHW",
+    "regex": "(CHW)"
+  },
+  {
+    "name": "CLF",
+    "regex": "(CLF|UF)"
+  },
+  {
+    "name": "CLP",
+    "regex": "(CLP|\\$)"
+  },
+  {
+    "name": "CNY",
+    "regex": "(CNY|¥|[yY]u[áa]n|[rR]enminbi|RMB)"
+  },
+  {
+    "name": "COP",
+    "regex": "(COP|COP\\s?\\$|COL\\$|Col\\$|CO\\$|\\$)"
+  },
+  {
+    "name": "COU",
+    "regex": "(COU)"
+  },
+  {
+    "name": "CRC",
+    "regex": "(CRC|₡)"
+  },
+  {
+    "name": "CUC",
+    "regex": "(CUC|CUC\\s?\\$|\\$)"
+  },
+  {
+    "name": "CUP",
+    "regex": "(CUP|CUP\\s?\\$|MN\\$|\\$)"
+  },
+  {
+    "name": "CVE",
+    "regex": "(CVE)"
+  },
+  {
+    "name": "CZK",
+    "regex": "(CZK)"
+  },
+  {
+    "name": "DJF",
+    "regex": "(DJF)"
+  },
+  {
+    "name": "DKK",
+    "regex": "(DKK|kr|kr\\.|dkr)"
+  },
+  {
+    "name": "DOP",
+    "regex": "(DOP|DOP\\s?\\$|RD\\$|\\$)"
+  },
+  {
+    "name": "DZD",
+    "regex": "(DZD|دج|DA)"
+  },
+  {
+    "name": "EGP",
+    "regex": "(EGP|L\\.?E\\.?\\s?|E£|ج\\.م)"
+  },
+  {
+    "name": "ERN",
+    "regex": "(ERN|Nkf|Nfk|NFA|ናቕፋ)"
+  },
+  {
+    "name": "ETB",
+    "regex": "(ETB|Br\\.?|ብር|Birr)"
+  },
+  {
+    "name": "EUR",
+    "regex": "(EUR|€|euro)"
+  },
+  {
+    "name": "FJD",
+    "regex": "(FJD|FJ\\$?|\\$)"
+  },
+  {
+    "name": "FKP",
+    "regex": "(FKP|FK£|£)"
+  },
+  {
+    "name": "GBP",
+    "regex": "(GBP|£)", "([mM]illions?|[bB]illions?)?"
+  },
+  {
+    "name": "GEL",
+    "regex": "(GEL)"
+  },
+  {
+    "name": "GHS",
+    "regex": "(GHS|GH₵|GH¢|GH[cC])"
+  },
+  {
+    "name": "GIP",
+    "regex": "(GIP|£)"
+  },
+  {
+    "name": "GMD",
+    "regex": "(GMD|D)"
+  },
+  {
+    "name": "GNF",
+    "regex": "(GNF)"
+  },
+  {
+    "name": "GTQ",
+    "regex": "(GTQ|Q\\.?)"
+  },
+  {
+    "name": "GYD",
+    "regex": "(GYD|GYD\\$|G\\$|\\$)"
+  },
+  {
+    "name": "HKD",
+    "regex": "(HKD|HK\\$|\\$)"
+  },
+  {
+    "name": "HNL",
+    "regex": "(HNL|L\\.?)"
+  },
+  {
+    "name": "HRK",
+    "regex": "(HRK)"
+  },
+  {
+    "name": "HTG",
+    "regex": "(HTG)"
+  },
+  {
+    "name": "HUF",
+    "regex": "(HUF)"
+  },
+  {
+    "name": "IDR",
+    "regex": "(IDR|Rp\\.?)"
+  },
+  {
+    "name": "ILS",
+    "regex": "(ILS|NIS|₪|שֶׁקֶל)"
+  },
+  {
+    "name": "INR",
+    "regex": "(INR|₹|₨|Rs\\.?|रु\\.?|ரூ\\.?)"
+  },
+  {
+    "name": "IQD",
+    "regex": "(IQD|دينار|د\\.ع)"
+  },
+  {
+    "name": "IRR",
+    "regex": "(IRR|ریال|﷼)"
+  },
+  {
+    "name": "ISK",
+    "regex": "(ISK|kr|iskr)"
+  },
+  {
+    "name": "JMD",
+    "regex": "(JMD|JMD\\$|J\\$|\\$)"
+  },
+  {
+    "name": "JOD",
+    "regex": "(JOD|دينار|JD\\.?)"
+  },
+  {
+    "name": "JPY",
+    "regex": "(JPY|¥|￥|yen|円|圓)"
+  },
+  {
+    "name": "KES",
+    "regex": "(KES|Kshs?\\.?|KSh|KSH)"
+  },
+  {
+    "name": "KGS",
+    "regex": "(KGS)"
+  },
+  {
+    "name": "KHR",
+    "regex": "(KHR|៛|រៀល)"
+  },
+  {
+    "name": "KMF",
+    "regex": "(KMF)"
+  },
+  {
+    "name": "KPW",
+    "regex": "(KPW|₩|￦|원)"
+  },
+  {
+    "name": "KRW",
+    "regex": "(KRW|₩|￦|원)"
+  },
+  {
+    "name": "KWD",
+    "regex": "(KWD|دينار|K\\.?D\\.?\\.?|\\.د\\.ب)"
+  },
+  {
+    "name": "KYD",
+    "regex": "(KYD|KYD\\$?|CI\\$|\\$)"
+  },
+  {
+    "name": "KZT",
+    "regex": "(KZT|₸)"
+  },
+  {
+    "name": "LAK",
+    "regex": "(LAK|ກີ|₭N?|KIP)"
+  },
+  {
+    "name": "LBP",
+    "regex": "(LBP|L\\.L\\.?|ل\\.ل\\.|ليرات)"
+  },
+  {
+    "name": "LKR",
+    "regex": "(LKR|රු|₨\\.?|SLRs\\.?|Rs\\.?|ரூபாய்\\.?|රුපියල්\\.?)"
+  },
+  {
+    "name": "LRD",
+    "regex": "(LRD|LD\\$?|L\\$|\\$)"
+  },
+  {
+    "name": "LSL",
+    "regex": "(LSL|Maloti|M|Loti)"
+  },
+  {
+    "name": "LYD",
+    "regex": "(LYD|L\\.?D\\.?|ل\\.د|دينار)"
+  },
+  {
+    "name": "MAD",
+    "regex": "(MAD|د\\.م\\.|دراهم)"
+  },
+  {
+    "name": "MDL",
+    "regex": "(MDL)"
+  },
+  {
+    "name": "MGA",
+    "regex": "(MGA|Ar)"
+  },
+  {
+    "name": "MKD",
+    "regex": "(MKD)"
+  },
+  {
+    "name": "MMK",
+    "regex": "(MMK|[kK][sS]|[kK]yat)"
+  },
+  {
+    "name": "MNT",
+    "regex": "(MNT|₮)"
+  },
+  {
+    "name": "MOP",
+    "regex": "(MOP|MOP\\s?\\$|\\$)"
+  },
+  {
+    "name": "MRU",
+    "regex": "(MRU|أوقية)"
+  },
+  {
+    "name": "MUR",
+    "regex": "(MUR|₨\\.?|[rR]s)"
+  },
+  {
+    "name": "MVR",
+    "regex": "(MVR|MRF\\.?|MRf\\.?|Mrf\\.?|Rf\\.?|RF\\.?|Rufiyaa)"
+  },
+  {
+    "name": "MWK",
+    "regex": "(MWK|MwK|Mwk|M?K)"
+  },
+  {
+    "name": "MXN",
+    "regex": "(MXN|MEX\\$|Mex\\$|\\$)"
+  },
+  {
+    "name": "MXV",
+    "regex": "(MXV)"
+  },
+  {
+    "name": "MYR",
+    "regex": "(MYR|RM)"
+  },
+  {
+    "name": "MZN",
+    "regex": "(MZN)"
+  },
+  {
+    "name": "NAD",
+    "regex": "(NAD|N?\\$)"
+  },
+  {
+    "name": "NGN",
+    "regex": "(NGN|₦|N)"
+  },
+  {
+    "name": "NIO",
+    "regex": "(NIO|C?\\$)"
+  },
+  {
+    "name": "NOK",
+    "regex": "(NOK|kr\\.?|NKR\\.?|NKr\\.?|Nkr\\.?|nkr\\.?)"
+  },
+  {
+    "name": "NPR",
+    "regex": "(NPR|N?Rs\\.?|रू)"
+  },
+  {
+    "name": "NZD",
+    "regex": "(NZD|NZ\\s?\\$|\\$)"
+  },
+  {
+    "name": "OMR",
+    "regex": "(OMR|ر\\.ع\\.|ر\\.ع|ريال‎|[rR]ials?|R\\.?O\\.?)"
+  },
+  {
+    "name": "PAB",
+    "regex": "(PAB|B\\/\\.?)"
+  },
+  {
+    "name": "PEN",
+    "regex": "(PEN|S\\/\\.?)"
+  },
+  {
+    "name": "PGK",
+    "regex": "(PGK|K)"
+  },
+  {
+    "name": "PHP",
+    "regex": "(PHP|₱|PhP|Php|P)"
+  },
+  {
+    "name": "PKR",
+    "regex": "(PKR|₨\\.?|Rs\\.?|روپیہ)"
+  },
+  {
+    "name": "PLN",
+    "regex": "(PLN|zł)"
+  },
+  {
+    "name": "PYG",
+    "regex": "(PYG|₲|Gs?\\.?)"
+  },
+  {
+    "name": "QAR",
+    "regex": "(QAR|QR\\.?|ريال|ر\\.ق)"
+  },
+  {
+    "name": "RON",
+    "regex": "(RON)"
+  },
+  {
+    "name": "RSD",
+    "regex": "(RSD)"
+  },
+  {
+    "name": "RUB",
+    "regex": "(RUB|₽)"
+  },
+  {
+    "name": "RWF",
+    "regex": "(RWF|RwF|Rwf)"
+  },
+  {
+    "name": "SAR",
+    "regex": "(SAR|SR|﷼|ريال|ر\\.س)"
+  },
+  {
+    "name": "SBD",
+    "regex": "(SBD\\.?\\$?|SI\\$|\\$)"
+  },
+  {
+    "name": "SCR",
+    "regex": "(SCR|SR|Sr\\.?)"
+  },
+  {
+    "name": "SDG",
+    "regex": "(SDG|جنيه)"
+  },
+  {
+    "name": "SEK",
+    "regex": "(SEK|kr|skr)"
+  },
+  {
+    "name": "SGD",
+    "regex": "(SGD|SGD\\s?\\$?|S?\\$)"
+  },
+  {
+    "name": "SHP",
+    "regex": "(SHP|£)"
+  },
+  {
+    "name": "SLL",
+    "regex": "(SLL|L[eE]\\.?)"
+  },
+  {
+    "name": "SOS",
+    "regex": "(SOS)"
+  },
+  {
+    "name": "SRD",
+    "regex": "(SRD|\\$)"
+  },
+  {
+    "name": "SSP",
+    "regex": "(SSP)"
+  },
+  {
+    "name": "STN",
+    "regex": "(STN|Dbs?\\.?)"
+  },
+  {
+    "name": "SVC",
+    "regex": "(SVC|₡|¢)"
+  },
+  {
+    "name": "SYP",
+    "regex": "(SYP|S\\.?P\\.?|ليرة)"
+  },
+  {
+    "name": "SZL",
+    "regex": "(SZL|[eE]malangeni|E)"
+  },
+  {
+    "name": "THB",
+    "regex": "(THB|฿)"
+  },
+  {
+    "name": "TJS",
+    "regex": "(TJS|سامانی)"
+  },
+  {
+    "name": "TMT",
+    "regex": "(TMT)"
+  },
+  {
+    "name": "TND",
+    "regex": "(TND)"
+  },
+  {
+    "name": "TOP",
+    "regex": "(TOP|TOP\\$|T?\\$)"
+  },
+  {
+    "name": "TRY",
+    "regex": "(TRY|₺|TL)"
+  },
+  {
+    "name": "TTD",
+    "regex": "(TTD|TTD\\$?|TT\\$|\\$)"
+  },
+  {
+    "name": "TWD",
+    "regex": "(TWD|NT\\$|\\$)"
+  },
+  {
+    "name": "TZS",
+    "regex": "(TZS|TZs|Tsh\\.?)"
+  },
+  {
+    "name": "UAH",
+    "regex": "(UAH|₴)"
+  },
+  {
+    "name": "UGX",
+    "regex": "(UGX|USH\\.?|USh\\.?|Ush\\.?|[sS]hillings)"
+  },
+  {
+    "name": "USD",
+    "regex": "(USD|USD\\s?\\$?|US\\s?\\$|Us\\s?\\$|\\$|\\$USD|U\\$S|доллара?|долларов|доллара? США|долларов США|бакса?|баксов)", "([mM]illions?|[mM]illiards?|[bB]illions?)?"
+  },
+  {
+    "name": "USN",
+    "regex": "(USN)"
+  },
+  {
+    "name": "UYI",
+    "regex": "(UYI)"
+  },
+  {
+    "name": "UYU",
+    "regex": "(UYU|\\$U|\\$)"
+  },
+  {
+    "name": "UZS",
+    "regex": "(UZS)"
+  },
+  {
+    "name": "VEF",
+    "regex": "(VEF|[bB]s\\.?[fF]?\\.?)"
+  },
+  {
+    "name": "VND",
+    "regex": "(VND|₫)"
+  },
+  {
+    "name": "VUV",
+    "regex": "(VUV|VT|Vt)"
+  },
+  {
+    "name": "WST",
+    "regex": "(WST|WST\\$?|WS\\$|\\$|SAT\\$?|ST\\$)"
+  },
+  {
+    "name": "XAF",
+    "regex": "(XAF|FCFA|CFA)"
+  },
+  {
+    "name": "XAG",
+    "regex": "(XAG)"
+  },
+  {
+    "name": "XAU",
+    "regex": "(XAU)"
+  },
+  {
+    "name": "XBA",
+    "regex": "(XBA)"
+  },
+  {
+    "name": "XBB",
+    "regex": "(XBB)"
+  },
+  {
+    "name": "XBC",
+    "regex": "(XBC)"
+  },
+  {
+    "name": "XBD",
+    "regex": "(XBD)"
+  },
+  {
+    "name": "XCD",
+    "regex": "(XCD|ECD?\\s?\\$|\\$)"
+  },
+  {
+    "name": "XDR",
+    "regex": "(XDR|SDR)"
+  },
+  {
+    "name": "XOF",
+    "regex": "(XOF|FCFA|CFA)"
+  },
+  {
+    "name": "XPD",
+    "regex": "(XPD)"
+  },
+  {
+    "name": "XPF",
+    "regex": "(XPF)"
+  },
+  {
+    "name": "XPT",
+    "regex": "(XPT)"
+  },
+  {
+    "name": "XSU",
+    "regex": "(XSU)"
+  },
+  {
+    "name": "XTS",
+    "regex": "(XTS)"
+  },
+  {
+    "name": "XUA",
+    "regex": "(XUA)"
+  },
+  {
+    "name": "XXX",
+    "regex": "(XXX)"
+  },
+  {
+    "name": "YER",
+    "regex": "(YER|Y\\.?R\\.?|﷼|ريال)"
+  },
+  {
+    "name": "ZAR",
+    "regex": "(ZAR|R)"
+  },
+  {
+    "name": "ZMW",
+    "regex": "(ZMW|Zmk|K)"
+  },
+  {
+    "name": "ZWL",
+    "regex": "(ZWL|Z\\$)"
+  }
+]
