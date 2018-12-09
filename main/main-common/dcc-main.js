@@ -23,12 +23,12 @@ const DirectCurrencyConverter = function() {
     let iso4217CurrenciesEnabled;
 
     /**
-     * Unit before currency.
+     * Unit before currency: EUR 1,00
      */
     let regexes1;
 
     /**
-     * Unit after currency.
+     * Unit after currency: 1,00 EUR
      */
     let regexes2;
 
@@ -44,10 +44,12 @@ const DirectCurrencyConverter = function() {
 
 
     /**
-     * Both JSON data files are read.
+     * All JSON data files are read.
      */
-    const onCurrencyMetaDataAndEnabledRead = () => {
-        eventAggregator.publish("currencyMetaDataAndEnabledRead");
+    const onSettingsRead = () => {
+        if (iso4217CurrencyMetaData && iso4217CurrenciesEnabled && regexes1 && regexes2) {
+            eventAggregator.publish("allSettingsRead");
+        }
     };
 
 
@@ -58,9 +60,7 @@ const DirectCurrencyConverter = function() {
     const onCurrencyDataRead = (result) => {
         const currencyDataJson = result;
         iso4217CurrencyMetaData = JSON.parse(currencyDataJson);
-        if (iso4217CurrencyMetaData && iso4217CurrenciesEnabled) {
-            onCurrencyMetaDataAndEnabledRead();
-        }
+        onSettingsRead();
     };
     const currencyDataRequest = new XMLHttpRequest();
     currencyDataRequest.overrideMimeType("application/json");
@@ -79,9 +79,7 @@ const DirectCurrencyConverter = function() {
     const onIso4217CurrenciesRead = (result) => {
         const iso4217CurrenciesJson = result;
         iso4217CurrenciesEnabled = JSON.parse(iso4217CurrenciesJson);
-        if (iso4217CurrencyMetaData && iso4217CurrenciesEnabled) {
-            onCurrencyMetaDataAndEnabledRead();
-        }
+        onSettingsRead();
     };
     const iso4217CurrenciesRequest = new XMLHttpRequest();
     iso4217CurrenciesRequest.overrideMimeType("application/json");
@@ -97,12 +95,10 @@ const DirectCurrencyConverter = function() {
      * Read default regexes
      * @param result
      */
-    const onRegexes1Read = (result) => {
+    const onRegexes1RequestRead = (result) => {
         const regexes1Json = result;
         regexes1 = JSON.parse(regexes1Json);
-        if (iso4217CurrencyMetaData && iso4217CurrenciesEnabled) {
-            onCurrencyMetaDataAndEnabledRead();
-        }
+        onSettingsRead();
     };
     const regexes1Request = new XMLHttpRequest();
     regexes1Request.overrideMimeType("application/json");
@@ -118,12 +114,10 @@ const DirectCurrencyConverter = function() {
      * Read default regexes
      * @param result
      */
-    const onRegexes2Read = (result) => {
+    const onRegexes2RequestRead = (result) => {
         const regexes2Json = result;
         regexes2 = JSON.parse(regexes2Json);
-        if (iso4227CurrencyMetaData && iso4227CurrenciesEnabled) {
-            onCurrencyMetaDataAndEnabledRead();
-        }
+        onSettingsRead();
     };
     const regexes2Request = new XMLHttpRequest();
     regexes2Request.overrideMimeType("application/json");
@@ -136,10 +130,14 @@ const DirectCurrencyConverter = function() {
     regexes2Request.send();
 
 
-
+    /**
+     *
+     * @param aStorageServiceProvider
+     * @param _
+     */
     const createInformationHolder = (aStorageServiceProvider, _) => {
-        informationHolder = new InformationHolder(aStorageServiceProvider, iso4217CurrencyMetaData, _);
-
+        informationHolder = new InformationHolder(aStorageServiceProvider, iso4217CurrencyMetaData, _,
+            regexes1, regexes2);
     }
 
 
@@ -160,9 +158,6 @@ const DirectCurrencyConverter = function() {
         }
         else if (informationHolder.quotesProvider === "Currencylayer") {
             quotesService = new CurrencylayerQuotesServiceProvider(eventAggregator, informationHolder);
-        }
-        else if (informationHolder.quotesProvider === "Yahoo") {
-            quotesService = new Yahoo2QuotesServiceProvider(eventAggregator, informationHolder);
         }
 
         eventAggregator.subscribe("countryReceivedFreegeoip", (countryCode) => {
@@ -195,15 +190,13 @@ const DirectCurrencyConverter = function() {
                 else if (eventArgs.settings.quotesProvider === "Currencylayer") {
                     quotesService = new CurrencylayerQuotesServiceProvider(eventAggregator, informationHolder);
                 }
-                else if (eventArgs.settings.quotesProvider === "Yahoo") {
-                    quotesService = new Yahoo2QuotesServiceProvider(eventAggregator, informationHolder);
-                }
             }
             informationHolder.resetReadCurrencies();
             new ParseSettings(eventArgs.settings, informationHolder);
             if (toCurrencyChanged || quotesProviderChanged) {
                 quotesService.loadQuotes(commonQuotesService, informationHolder.apiKey);
             }
+            informationHolder.addRegexesForEnabledCurrencies();
         });
 
         eventAggregator.subscribe("resetQuotes", (eventArgs) => {
@@ -236,6 +229,12 @@ const DirectCurrencyConverter = function() {
         },
         get informationHolder(){
             return informationHolder;
+        },
+        get regexes1(){
+            return regexes1;
+        },
+        get regexes2(){
+            return regexes2;
         },
         createInformationHolder: createInformationHolder,
         onStorageServiceInitDone: onStorageServiceInitDone

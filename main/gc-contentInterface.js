@@ -113,12 +113,12 @@ const GcContentInterface = function(anInformationHolder) {
             console.log("DCC executeScript tabId " + tabId + " URL " + tab.url);
             // console.log("customTabObjects[tabId] " + customTabObjects[tabId]);
             chrome.tabs.insertCSS(tabId, {file: "title.css", allFrames: true});
-            chrome.tabs.executeScript(tabId, {file: "common/dcc-regexes.js", allFrames: true}, () => {
-                chrome.tabs.executeScript(tabId, {file: "common/dcc-content.js", allFrames: true}, () => {
-                    chrome.tabs.executeScript(tabId, {file: "dcc-chrome-content-adapter.js", allFrames: true},
+            //chrome.tabs.executeScript(tabId, {file: "common/dcc-regexes.js", allFrames: true}, () => {
+                chrome.tabs.executeScript(tabId, {file: "content/dcc-content.js", allFrames: true}, () => {
+                    chrome.tabs.executeScript(tabId, {file: "gc-content-adapter.js", allFrames: true},
                         onScriptExecuted);
                 });
-            });
+            //});
         }
     };
 
@@ -161,7 +161,7 @@ const GcContentInterface = function(anInformationHolder) {
         const quotesCallback = (aTab) => {
             chrome.runtime.onMessage.addListener(quotesListener);
         };
-        chrome.tabs.create({"url": chrome.extension.getURL("common/quotes.html")}, quotesCallback);
+        chrome.tabs.create({"url": chrome.extension.getURL("quotes.html")}, quotesCallback);
     };
 
     const showTestTab = () => {

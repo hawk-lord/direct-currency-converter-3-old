@@ -205,7 +205,7 @@
   },
   {
     "name": "GBP",
-    "regex": "(GBP|£)", "([mM]illions?|[bB]illions?)?"
+    "regex": "(GBP|£) ([mM]illions?|[bB]illions?)?"
   },
   {
     "name": "GEL",
@@ -593,7 +593,8 @@
   },
   {
     "name": "USD",
-    "regex": "(USD|USD\\s?\\$?|US\\s?\\$|Us\\s?\\$|\\$|\\$USD|U\\$S|доллара?|долларов|доллара? США|долларов США|бакса?|баксов)", "([mM]illions?|[mM]illiards?|[bB]illions?)?"
+    "regex": "(USD|USD\\s?\\$?|US\\s?\\$|Us\\s?\\$|\\$|\\$USD|U\\$S|доллара?|долларов|доллара? США|долларов США|бакса?|баксов)",
+    "mult": "([mM]illions?|[mM]illiards?|[bB]illions?)?"
   },
   {
     "name": "USN",

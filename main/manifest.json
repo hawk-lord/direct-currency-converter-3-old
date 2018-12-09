@@ -33,7 +33,6 @@
       "main-common/quotes-service.js",
       "main-common/parseSettings.js",
       "main-common/settings.js",
-      "main-common/yahoo-2-quotes.js",
       "gc-chromeInterface.js",
       "gc-contentInterface.js",
       "gc-l10n.js",

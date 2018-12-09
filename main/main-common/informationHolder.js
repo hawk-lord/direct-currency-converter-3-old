@@ -18,7 +18,7 @@
  * @returns {{conversionEnabled, conversionEnabled, convertToCountry, convertToCountry, convertToCurrency, convertToCurrency, getConversionQuotes: (function()), setConversionQuote: (function(*, *)), excludedDomains, excludedDomains, convertFroms, convertFroms, enableOnStart, enableOnStart, quoteAdjustmentPercent, quoteAdjustmentPercent, roundPrices, roundPrices, showOriginalPrices, showOriginalPrices, showOriginalCurrencies, showOriginalCurrencies, showTooltip, showTooltip, tempConvertUnits, tempConvertUnits, showDccToolsButton, showDccToolsButton, showDccConversionButton, showDccConversionButton, getCurrencyNames: (function()), isAllCurrenciesRead: (function()), getQuoteString: (function()), resetReadCurrencies: (function()), resetSettings: (function(*=))}}
  * @constructor
  */
-const InformationHolder = function(aStorageService, aCurrencyData, _) {
+const InformationHolder = function(aStorageService, aCurrencyData, _, aRegexes1, aRegexes2) {
     const conversionQuotes = {
         "inch": 25.4,
         "kcal": 4.184,
@@ -54,12 +54,42 @@ const InformationHolder = function(aStorageService, aCurrencyData, _) {
         });
         return foundCurrency;
     };
+
+    const addRegexesForEnabledCurrencies = () => {
+        aStorageService.convertFroms.forEach((aCurrency) => {
+            if (aCurrency.enabled) {
+                for (let regex1 of aRegexes1) {
+                    if (regex1.name === aCurrency.isoName) {
+                        console.log(regex1);
+                        regexes1[regex1.name] = regex1;
+                        break;
+                    }
+                }
+                for (let regex2 of aRegexes2) {
+                    if (regex2.name === aCurrency.isoName) {
+                        console.log(regex2);
+                        regexes2[regex2.name] = regex2;
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
     let numberOfReadCurrencies = 0;
     let conversionEnabled = aStorageService.enableOnStart;
+
     const currencyNames = {};
+    const regexes1 = {};
+    const regexes2 = {};
+    // Add a localised name for each currency.
     aStorageService.convertFroms.forEach((aCurrency) => {
         currencyNames[aCurrency.isoName] = _(aCurrency.isoName);
     });
+
+
+    addRegexesForEnabledCurrencies();
+
     let quoteStrings = [];
 
     const getConversionQuotes = () => {
@@ -76,7 +106,7 @@ const InformationHolder = function(aStorageService, aCurrencyData, _) {
         return numberOfReadCurrencies >= aStorageService.convertFroms.length;
     };
     const makeQuoteString = (aConvertFromCurrency) => {
-        if (aConvertFromCurrency.isoName != aStorageService.convertToCurrency) {
+        if (aConvertFromCurrency.isoName !== aStorageService.convertToCurrency) {
             const quote = parseFloat(conversionQuotes[aConvertFromCurrency.isoName]);
             if (isNaN(quote)) {
                 const quoteString = "1 " + aConvertFromCurrency.isoName + " = - " + aStorageService.convertToCurrency;
@@ -113,9 +143,9 @@ const InformationHolder = function(aStorageService, aCurrencyData, _) {
         },
         set convertToCountry (aCountry) {
             aStorageService.convertToCountry = aCountry;
-                //if (!aStorageService.convertToCurrency) {
+                if (!aStorageService.convertToCurrency) {
                     aStorageService.convertToCurrency = findCurrency(aCountry);
-                //}
+                }
         },
         get convertToCurrency () {
             return aStorageService.convertToCurrency;
@@ -221,11 +251,18 @@ const InformationHolder = function(aStorageService, aCurrencyData, _) {
         set showAsSymbol (aShowAsSymbol) {
             aStorageService.showAsSymbol = aShowAsSymbol;
         },
+        get regexes1 () {
+            return regexes1;
+        },
+        get regexes2 () {
+            return regexes2;
+        },
         getCurrencyNames: getCurrencyNames,
         isAllCurrenciesRead: isAllCurrenciesRead,
         getQuoteString: getQuoteString,
         resetReadCurrencies: resetReadCurrencies,
-        resetSettings: resetSettings
+        resetSettings: resetSettings,
+        addRegexesForEnabledCurrencies: addRegexesForEnabledCurrencies
     }
 };
 

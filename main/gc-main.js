@@ -23,7 +23,7 @@ const GcDirectCurrencyConverter = (function() {
      */
     const onMessageFromSettings = (message, sender, sendResponse) => {
         if (message.command === "show") {
-            sendResponse(new Settings(informationHolder));
+            sendResponse(new Settings(dcc.informationHolder));
         }
         else if (message.command === "save") {
             eventAggregator.publish("saveSettings", {
@@ -40,11 +40,11 @@ const GcDirectCurrencyConverter = (function() {
     chrome.runtime.onMessage.addListener(onMessageFromSettings);
 
     /**
-     * Called when JSON settings have been read.
+     * Called when JSON settings have been read so we can read correct data from storage.
      */
-    eventAggregator.subscribe("currencyMetaDataAndEnabledRead", () => {
+    eventAggregator.subscribe("allSettingsRead", () => {
 
-        console.log("currencyMetaDataAndEnabledRead");
+        console.log("allSettingsRead");
 
         eventAggregator.subscribe("storageInitDone", () => {
             dcc.createInformationHolder(gcStorageServiceProvider, _);
