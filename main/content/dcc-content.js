@@ -1067,8 +1067,8 @@ if (!this.DirectCurrencyContent) {
             for (let currency of aSettings.convertFroms) {
                 if (currency.enabled) {
                     try {
-                        const regex1 = RegExp(begin + regexes1[currency.isoName].regex + space + value + space + "()?", "g")
-                        const regex2 = RegExp(value + space + "()?" + space + regexes2[currency.isoName].regex + end, "g")
+                        const regex1 = RegExp(begin + regexes1[currency.isoName].regex + space + value + space + regexes1[currency.isoName].regex, "g")
+                        const regex2 = RegExp(value + space + regexes2[currency.isoName].mult + space + regexes2[currency.isoName].regex + end, "g")
                         enabledCurrenciesWithRegexes.push(new CurrencyRegex(
                             iso4217Currency,
                             currency.isoName,
