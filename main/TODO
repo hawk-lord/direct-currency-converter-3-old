@@ -1,0 +1,26 @@
+Tests:
+Unit tests.
+Data source switch works.
+
+File organisation.
+Exclude build files.
+
+
+README add
+
+help.html
+
+Bug with Android drag.
+
+Does not work with £: https://www.theregister.co.uk/2015/11/05/talktalk_offers_customer_30gbp_final_settlement_after_crims_nick_3500gbp/
+
+Popup use multiples.
+
+Whitelist
+
+Use local test file instead of joint.ax if possible.
+
+Different currency sets for different data sources. (Less Unknown).
+
+ECB quotes, also currencies with fixed rates.
+

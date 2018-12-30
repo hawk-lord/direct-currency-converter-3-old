@@ -256,8 +256,8 @@
   },
   {
     "name": "GBP",
-    "regex": "(GBP|£) ([mM]illions?|[bB]illions?)?",
-    "mult": "()"
+    "regex": "(GBP|£)",
+    "mult": "([mM]illions?|[bB]illions?)"
   },
   {
     "name": "GEL",
